@@ -1,0 +1,28 @@
+name: Stackables
+version: 0.4
+
+author: TheMineBench
+authors: [Zi Zi, Exerosis]
+#Big thanks to Zi Zi :)
+
+main: me.exerosis.stackables.Stackables
+database: false
+commands:
+   Stack:
+     description: |
+       §2This command controls the Stackables plugin!
+       §2/Stack §areloadConfig §7- Reloads the config.
+       §2/Stack §aSave §2[§atrue§2:§afalse§2] §7- Sets saving maxStackSizes to the config.
+       §2/Stack §aAPPLE 10 §7- Sets the maxStackSize of apples to 10.
+       §2/Stack §a260 10 §7- Sets the maxStackSize of apples to 10.
+       §2/Stack §aAPPLE §7- Tells you the maxStackSize of apples.
+       §2/Stack §a10 §7- Sets the maxStackSize of the item in your hand to 10.
+       §2/Stack §7- Tells you the maxStackSize of the item in your hand.
+     permission: stackables.command
+     aliases: [stackable, stackSize, stackables, maxStackSize, setMaxStackSize, setStackSize]
+     usage: §2/<command> [§aMaterial§2:§areload§2:§asave§2] [§amaxStackSize§2] 
+       
+permissions:
+   stackables.command:
+      description: Allows you to set stack size!
+      default: op
