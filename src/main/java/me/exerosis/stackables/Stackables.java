@@ -25,21 +25,6 @@ public class Stackables extends JavaPlugin {
     public static final String CONFIG_SECTION_NAME = "MaxStackSizes";
     private static Stackables PLUGIN;
 
-    @Override
-    public void onEnable() {
-        PLUGIN = this;
-
-        getConfig().addDefault(SAVE_STACK_SIZES, true);
-        saveDefaultConfig();
-        if (getConfig().getBoolean(SAVE_STACK_SIZES))
-            loadConfig();
-
-        Bukkit.getPluginManager().registerEvents(new StackablesListener(), this);
-
-        getCommand("Stack").setExecutor(new CommandStackSize());
-    }
-
-
     /**
      * Sets the maxStackSize of the Material!
      *
@@ -97,5 +82,19 @@ public class Stackables extends JavaPlugin {
 
     public static Stackables getPlugin() {
         return PLUGIN;
+    }
+
+    @Override
+    public void onEnable() {
+        PLUGIN = this;
+
+        getConfig().addDefault(SAVE_STACK_SIZES, true);
+        saveDefaultConfig();
+        if (getConfig().getBoolean(SAVE_STACK_SIZES))
+            loadConfig();
+
+        Bukkit.getPluginManager().registerEvents(new StackablesListener(), this);
+
+        getCommand("Stack").setExecutor(new CommandStackSize());
     }
 }
